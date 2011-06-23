@@ -17,5 +17,5 @@ class Command(NoArgsCommand):
             up[0].switch()
         else:
             graceful.backends[0].start()
-            if not backends[0].is_active():
+            if not graceful.backends[0].is_active():
                 graceful.backends[0].switch()
