@@ -1,4 +1,4 @@
-from graceful import Graceful
+from django_graceful import Graceful
 from django.core.management.base import BaseCommand, CommandError
 
 class Command(BaseCommand):
