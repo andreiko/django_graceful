@@ -67,6 +67,10 @@ class Backend(object):
         while not os.path.exists(self.socket):
             time.sleep(0.1)
         print 'Started backend "%s".' % self.name
+        try:
+            os.chmod(self.socket, 0666)
+        except Exception, e:
+            print "chmod 666 %s failed" % self.socket
         
     def stop(self):
         pid = self.is_up()
