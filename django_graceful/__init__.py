@@ -78,9 +78,9 @@ class Backend(object):
             print 'Skipping stopped backend "%s"' % self.name
             return
         try:
-            os.kill(pid)
-        except:
-            pass
+            os.kill(pid, signal.SIGKILL)
+        except Exception, e:
+            print "unable to kill %d: %s" % (pid, e)
         for filename in (self.socket, self.pidfile):
             try:
                 os.unlink(filename)
