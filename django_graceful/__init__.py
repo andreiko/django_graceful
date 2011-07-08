@@ -1,6 +1,7 @@
 from django.core.management.base import CommandError
 from django.conf import settings
 import os
+import signal
 import sys
 import time
 import subprocess
