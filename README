@@ -48,6 +48,7 @@ interruption of your service.
 
     See ./manage.py <command> help for available options.
 
+
 5. Example
 
     A short example of how Graceful is meant to be used.
