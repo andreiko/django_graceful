@@ -25,8 +25,7 @@ interruption of your service.
 
 3. Installation
 
-   * Clone git://github.com/andreiko/django_graceful.git;
-   * Run python setup.py install;
+   * Run easy_install django_graceful;
    * Add django_graceful to your project's INSTALLED_APPS;
    * In your project's settings.py add GRACEFUL_STATEDIR variable with
      full path to existing writable directory, where you want Graceful
