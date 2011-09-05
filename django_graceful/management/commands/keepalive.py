@@ -2,7 +2,7 @@ from django_graceful import Graceful
 from django.core.management.base import NoArgsCommand
 
 class Command(NoArgsCommand):
-    help = "TODO"
+    help = "Ensures there is a running backend and it's active."
     
     def handle_noargs(self, **options):
         graceful = Graceful()
@@ -19,3 +19,4 @@ class Command(NoArgsCommand):
             graceful.backends[0].start()
             if not graceful.backends[0].is_active():
                 graceful.backends[0].switch()
+

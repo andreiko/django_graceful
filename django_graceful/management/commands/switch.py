@@ -2,7 +2,7 @@ from django_graceful import Graceful
 from django.core.management.base import BaseCommand, CommandError
 
 class Command(BaseCommand):
-    help = "TODO"
+    help = "Switches to specified backend."
 
     def handle(self, *args, **options):
         graceful = Graceful()
@@ -12,3 +12,4 @@ class Command(BaseCommand):
             graceful.map[args[0]].switch()
         except KeyError:
             raise CommandError('Backend "%s" does not exist.' % a)
+

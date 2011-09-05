@@ -3,7 +3,7 @@ from django.core.management.base import BaseCommand, CommandError
 from optparse import make_option
 
 class Command(BaseCommand):
-    help = "TODO"
+    help = "Restarts specified backends. Stopped backends also become running."
 
     option_list = (
         make_option('--all', help='Restart all running backends', action='store_true'),
@@ -30,4 +30,5 @@ class Command(BaseCommand):
         for b in restartlist:
             if b.is_up():
                 b.stop()
-            b.start()                
+            b.start()
+

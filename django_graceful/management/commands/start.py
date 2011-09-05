@@ -3,7 +3,7 @@ from django.core.management.base import BaseCommand, CommandError
 from optparse import make_option
 
 class Command(BaseCommand):
-    help = "TODO"
+    help = "Starts specified backends."
 
     option_list = (
         make_option('--all', help='Start all available backends', action='store_true'),
@@ -24,4 +24,5 @@ class Command(BaseCommand):
                 except KeyError:
                     raise CommandError('Backend "%s" does not exist.' % a)
         for b in startlist:
-            b.start()                
+            b.start()
+
