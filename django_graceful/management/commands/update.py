@@ -2,7 +2,7 @@ from django_graceful import Graceful
 from django.core.management.base import NoArgsCommand
 
 class Command(NoArgsCommand):
-    help = "Gracefully switches to another backend. If target backend is running, it's restarted prior to switching."
+    help = "Restarts inactive backend and switches to it."
     
     def handle_noargs(self, **options):
         graceful = Graceful()

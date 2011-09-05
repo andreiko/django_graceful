@@ -102,7 +102,7 @@ class Graceful(object):
         except AttributeError:
             raise CommandError('GRACEFUL_STATEDIR setting is required for this command to work.')
         if not os.path.isdir(self.statedir):
-            raise CommandError('Path "%s" specified in GRACEFUL_STATEDIR setting should be writable a directory.' % self.statedir)            
+            raise CommandError('Path "%s" specified in GRACEFUL_STATEDIR setting should be a writable directory.' % self.statedir)            
         self.socket = os.path.join(self.statedir, "fastcgi.socket")
         self.backends = (
                 Backend('a', graceful=self),

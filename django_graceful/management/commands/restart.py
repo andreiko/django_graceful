@@ -3,7 +3,7 @@ from django.core.management.base import BaseCommand, CommandError
 from optparse import make_option
 
 class Command(BaseCommand):
-    help = "Restarts specified backends. Stopped backends also become running."
+    help = "Restarts specified backends, even stopped ones."
 
     option_list = (
         make_option('--all', help='Restart all running backends', action='store_true'),
